@@ -1,4 +1,4 @@
-from . import INPUT_PATH, clean_data, load_data
+from . import INPUT_PATH, clean_data, load_data, validate_data
 
 
 def main():
@@ -40,6 +40,8 @@ def main():
     }
 
     df = clean_data(df, MISSING_VALUE_STRATEGY, ["unnamed:_0"])
+
+    df = validate_data(df)
 
     return df
 
